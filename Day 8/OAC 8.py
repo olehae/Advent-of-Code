@@ -1,15 +1,13 @@
 with open("input8.txt") as f:
     lines = f.readlines()
 
-print(lines)
+print(f"{lines=}")
 
 grid = []
 for i in lines:
-    grid.append(list(map(int,list(i.replace("\n", "")))))
+    grid.append(list(map(int, list(i.replace("\n", "")))))
 
-
-"""for j in grid:
-    print(j)"""
+print(f"{grid=}")
 
 visible = 0
 for i in range(len(grid)):
@@ -25,7 +23,4 @@ for i in range(len(grid)):
                 elif grid[i][j] > max([row[j] for row in grid][:i]) or grid[i][j] > max([row[j] for row in grid][i+1:]):
                     visible += 1
 
-print(visible)
-
-"""print(len(grid[0][:10]))
-print(grid[0][:10])"""
+print(f"\n{visible=}")
