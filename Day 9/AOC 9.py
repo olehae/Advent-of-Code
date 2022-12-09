@@ -1,4 +1,4 @@
-with open("input09.txt") as f:
+with open("input9.txt") as f:
     data = f.readlines()
 
 data = [i.replace("\n", "").split() for i in data]
@@ -28,45 +28,54 @@ def move_tail(tail_cords, head_cords):
     new_y = tail_cords[1]
     if head_cords[0] - tail_cords[0] == 2:
         new_x += 1
-        if head_cords[1] - tail_cords[1] == 1:
+        if head_cords[1] - tail_cords[1] in (1, 2):
             new_y += 1
-        elif head_cords[1] - tail_cords[1] == -1:
+        elif head_cords[1] - tail_cords[1] in (-1, -2):
             new_y -= 1
     elif head_cords[0] - tail_cords[0] == -2:
         new_x -= 1
-        if head_cords[1] - tail_cords[1] == 1:
+        if head_cords[1] - tail_cords[1] in (1, 2):
             new_y += 1
-        elif head_cords[1] - tail_cords[1] == -1:
+        elif head_cords[1] - tail_cords[1] in (-1, -2):
             new_y -= 1
     elif head_cords[1] - tail_cords[1] == 2:
         new_y += 1
-        if head_cords[0] - tail_cords[0] == 1:
+        if head_cords[0] - tail_cords[0] in (1, 2):
             new_x += 1
-        elif head_cords[0] - tail_cords[0] == -1:
+        elif head_cords[0] - tail_cords[0] in (-1, -2):
             new_x -= 1
     elif head_cords[1] - tail_cords[1] == -2:
         new_y -= 1
-        if head_cords[0] - tail_cords[0] == 1:
+        if head_cords[0] - tail_cords[0] in (1, 2):
             new_x += 1
-        elif head_cords[0] - tail_cords[0] == -1:
+        elif head_cords[0] - tail_cords[0] in (-1, -2):
             new_x -= 1
 
     return new_x, new_y
 
 
 head = (300, 300)
-tail = (300, 300)
+tail1 = tail2 = tail3 = tail4 = tail5 = tail6 = tail7 = tail8 = tail9 = (300, 300)
 
 for i in data:
     for j in range(int(i[1])):
         head = move_head(head, i[0])
-        tail = move_tail(tail, head)
-        grid[tail[0]][tail[1]] = " "
+        tail1 = move_tail(tail1, head)
+        tail2 = move_tail(tail2, tail1)
+        tail3 = move_tail(tail3, tail2)
+        tail4 = move_tail(tail4, tail3)
+        tail5 = move_tail(tail5, tail4)
+        tail6 = move_tail(tail6, tail5)
+        tail7 = move_tail(tail7, tail6)
+        tail8 = move_tail(tail8, tail7)
+        tail9 = move_tail(tail9, tail8)
 
-"""for i in grid:
+        grid[tail9[0]][tail9[1]] = " "
+
+for i in grid:
     for j in i:
         print(j, end="")
-    print()"""
+    print()
 
 summe = 0
 for i in grid:
