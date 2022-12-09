@@ -70,7 +70,7 @@ for i in data:
         tail8 = move_tail(tail8, tail7)
         tail9 = move_tail(tail9, tail8)
 
-        grid[tail9[0]][tail9[1]] = " "
+        grid[tail9[0]][tail9[1]] = " "  # change the tail you want to show here (in this case you get the sum of tail9)
 
 for i in grid:
     for j in i:
