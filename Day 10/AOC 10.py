@@ -23,9 +23,9 @@ drawing = []
 
 for i in range(240):
     if log[i]+1 >= i % 40 >= log[i]-1:
-        drawing.append("#")
+        drawing.append("██")
     else:
-        drawing.append(" ")
+        drawing.append("░░")
 
 print(f"\n{drawing=}\n")
 
