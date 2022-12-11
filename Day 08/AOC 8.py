@@ -1,4 +1,4 @@
-with open("input8.txt") as f:
+with open("input08.txt") as f:
     lines = f.readlines()
 
 print(f"{lines=}")

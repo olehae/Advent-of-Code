@@ -1,8 +1,8 @@
-# Correct Answer for input7.txt: 1315285
-# Correct Answer for input7.txt part 2: 9847279
-# Correct Answer for input07.txt: 1391690
+# Correct Answer for input07.txt: 1315285
+# Correct Answer for input07.txt part 2: 9847279
+# Correct Answer for input07_fg.txt: 1391690
 
-with open('input7.txt') as f:
+with open('input07.txt') as f:
     lines = f.readlines()
 
 print(f"{lines=}")

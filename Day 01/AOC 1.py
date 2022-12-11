@@ -1,4 +1,4 @@
-with open('input1.txt') as f:
+with open('input01.txt') as f:
     lines = f.readlines()
 
 summe = 0

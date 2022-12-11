@@ -3,7 +3,7 @@ from itertools import accumulate
 
 dirs = defaultdict(int)
 
-for line in open("input7.txt").read().splitlines():
+for line in open("input07.txt").read().splitlines():
     match line.split():
         case "$", "cd", "/":
             path = ["/"]

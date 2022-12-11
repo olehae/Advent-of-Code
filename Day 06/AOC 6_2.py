@@ -1,4 +1,4 @@
-with open('input6.txt') as f:
+with open('input06.txt') as f:
     lines = f.readlines()
 
 print(lines)
@@ -6,11 +6,11 @@ linestring = lines[0].replace("\n", "")
 print(linestring)
 
 temp_list = []
-for i in linestring[:4]:
+for i in linestring[:14]:
     temp_list.append(i)
-packet_start = 4
+packet_start = 14
 
-for i in linestring[4:]:
+for i in linestring[14:]:
     if len(temp_list) > len(set(temp_list)):
         temp_list.pop(0)
         temp_list.append(i)

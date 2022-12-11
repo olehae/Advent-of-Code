@@ -1,4 +1,4 @@
-with open("input9.txt") as f:
+with open("input09.txt") as f:
     data = f.readlines()
 
 data = [i.replace("\n", "").split() for i in data]

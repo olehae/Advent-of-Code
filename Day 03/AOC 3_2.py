@@ -1,6 +1,6 @@
 import string
 
-with open('input3.txt') as f:
+with open('input03.txt') as f:
     lines = f.readlines()
 
 print(lines)
