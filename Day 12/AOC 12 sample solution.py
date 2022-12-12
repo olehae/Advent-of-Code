@@ -1,7 +1,7 @@
 import numpy as np
 import networkx as nx
 
-H = np.array([[*x.strip()] for x in open("input12.txt")])
+H = np.array([[*x.strip()] for x in open("input12_fg.txt")])
 
 S = tuple(*np.argwhere(H == 'S'))  # get start coordinates
 H[S] = 'a'  # start has elevation a
