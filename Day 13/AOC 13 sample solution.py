@@ -22,6 +22,7 @@ packets = [[*map(eval, x.split())] for x in open('input13.txt').read().split('\n
 print(cmp(*packets[0]))
 for i in packets:
     print(i)
+
 print(sum(i for i, p in enumerate(packets, 1) if cmp(*p) == -1))
 
 packets = sorted(sum(packets, [[2], [6]]), key=cmp_to_key(cmp))
