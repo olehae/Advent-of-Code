@@ -11,12 +11,14 @@ for i in objects:
 
 print(data)
 
-# data = [[(498,4), (498,6), (496,6)], [(503,4), (502,4), (502,9), (494,9)]]
+for i in data:
+    for j, elem in enumerate(i):
+        i[j] = (i[j][0]+100, i[j][1])
 
 
-grid = [["."]*600 for i in range(191)]
+grid = [["."]*800 for i in range(191)]
 
-
+maxim = 0
 for i in data:
     for j, elem in enumerate(i[:-1]):
         if elem[0] == i[j+1][0]:
@@ -34,14 +36,21 @@ for i in data:
             elif elem[0] > i[j+1][0]:
                 for y in range(i[j+1][0], elem[0]+1):
                     grid[elem[1]][y] = "#"
+        if elem[1] > maxim:
+            maxim = elem[1]
+        if i[j+1][1] > maxim:
+            maxim = i[j+1][1]
 
-grid[0][500] = "+"
+for i, elem in enumerate(grid[157]):
+    grid[159][i] = "#"
+
+grid[0][600] = "+"
 
 dropping = False
 
 
 def move():
-    current_index = [0, 500]
+    current_index = [0, 600]
     while True:
         if grid[current_index[0]+1][current_index[1]] == ".":
             current_index[0] += 1
@@ -55,11 +64,13 @@ def move():
             else:
                 grid[current_index[0]][current_index[1]] = "o"
                 print(f"==={current_index}===")
-                return False, 1
-        if current_index[0] == len(grid)-1:
-            break
+                if current_index == [0, 600]:
+                    return True, 1
+                else:
+                    return False, 1
 
-    return True, 0
+
+
 
 
 overall = 0
@@ -75,4 +86,3 @@ for i in grid:
 print(overall)
 
 summe = 0
-
