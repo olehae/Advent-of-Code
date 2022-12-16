@@ -6,3 +6,4 @@
 - Day 11 (automate with input data)
 - Day 12 (pathfinding)
 - Day 13 (multi-dimensional list comparison)
+- Day 16 (Find Maximum with rekursion)
