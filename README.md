@@ -7,3 +7,4 @@
 - Day 12 (pathfinding)
 - Day 13 (multi-dimensional list comparison)
 - Day 16 (Find Maximum with rekursion)
+- Day 17 (Tetris)
